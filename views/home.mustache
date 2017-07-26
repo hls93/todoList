@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>todoList</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h1>Todo List</h1>
+    </header>
+
+  <section>
+
+    <form id="todo" action="/" method="post">
+      <input class="input" type="text" name="item" placeholder="Add an Item" value="">
+      <input class="button" type="submit" name="" value="add">
+    </form>
+
+    <form class="doing" action="/update" method="post">
+      <ul id="todo">
+        {{#todos}}
+       <li><input type="checkbox" value="submit">{{todo}}</li>
+        {{/todos}}
+      </ul>
+    </form>
+
+    <h2>Done</h2>
+      <ul id="done">
+        
+        <li>{{todo}}</li>
+
+      </ul>
+
+  </section>
+
+  </body>
+</html>
