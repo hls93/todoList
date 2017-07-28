@@ -13,24 +13,30 @@
 
   <section>
 
-    <form id="todo" action="/" method="post">
+    <form id="input" action="/" method="post">
       <input class="input" type="text" name="item" placeholder="Add an Item" value="">
       <input class="button" type="submit" name="" value="add">
     </form>
 
-    <form class="doing" action="/update" method="post">
+
+    <h1>What's Left</h1>
       <ul id="todo">
         {{#todos}}
-       <li><input type="checkbox" value="submit">{{todo}}</li>
+          <li>
+            <form class="todo" action="/{{id}}" method="post">
+              <input type="submit" value="x" />
+              <span>{{text}}</span>
+            </form>
+          </li>
         {{/todos}}
       </ul>
-    </form>
+
 
     <h2>Done</h2>
       <ul id="done">
-        
-        <li>{{todo}}</li>
-
+        {{#done}}
+        <li>{{text}}</li>
+        {{/done}}
       </ul>
 
   </section>
